@@ -11,6 +11,7 @@ import (
 	"time"
 )
 
+// 数据库连接对象实际上是数据库连接池
 var _db *gorm.DB
 
 func Database(connRead, connWrite string) {

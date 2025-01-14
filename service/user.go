@@ -15,6 +15,7 @@ import (
 	"time"
 )
 
+// 数据传输对象
 type UserService struct {
 	NickName string `json:"nick_Name" form:"nick_name"`
 	UserName string `json:"user_name" form:"user_name"`
