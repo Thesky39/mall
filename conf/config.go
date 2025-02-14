@@ -20,7 +20,7 @@ var (
 
 	RedisDb     string
 	RedisAddr   string
-	redisPw     string
+	RedisPw     string
 	RedisDbName string
 
 	ValidEmail string
@@ -70,7 +70,7 @@ func LoadMysql(file *ini.File) {
 func LoadRedis(file *ini.File) {
 	RedisDb = file.Section("redis").Key("RedisDb").String()
 	RedisAddr = file.Section("redis").Key("RedisAddr").String()
-	redisPw = file.Section("redis").Key("RedisPw").String()
+	RedisPw = file.Section("redis").Key("RedisPw").String()
 	RedisDbName = file.Section("redis").Key("RedisDbName").String()
 
 }

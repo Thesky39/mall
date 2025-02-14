@@ -14,4 +14,7 @@ const (
 	ErrorUploadfail            = 30007
 	ErrorSendEmail             = 30008
 	//商品模块错误
+	ErrorProductImgUploadFail = 40001
+	//收藏夹模块错误
+	ErrorFavoriteExist = 50001
 )
