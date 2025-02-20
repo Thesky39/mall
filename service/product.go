@@ -59,7 +59,7 @@ func (service *ProductService) Create(c context.Context, uId uint, files []*mult
 		BossAvatar:    boss.Avatar,
 	}
 	productDao := dao.NewProductDao(c)
-	err = productDao.CreateProduct(product)
+	err = productDao.CreateProduct(&product)
 	if err != nil {
 		code = e.Error
 		util.LogrusObj.Infoln(err)

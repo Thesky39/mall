@@ -19,7 +19,7 @@ func NewProductDaoByDB(db *gorm.DB) *ProductDao {
 	return &ProductDao{db}
 }
 
-func (dao *ProductDao) CreateProduct(porduct model.Product) (err error) {
+func (dao *ProductDao) CreateProduct(porduct *model.Product) (err error) {
 	return dao.DB.Model(&model.Product{}).Create(&porduct).Error
 }
 
@@ -51,4 +51,8 @@ func (dao *ProductDao) GetProductById(id uint) (product *model.Product, err erro
 	err = dao.DB.Model(&model.Product{}).Where("id = ?", id).
 		First(&product).Error
 	return
+}
+
+func (dao *ProductDao) UpdateProduct(id uint, product *model.Product) (err error) {
+	return dao.DB.Model(&model.Product{}).Where("id = ?", id).Updates(product).Error
 }
